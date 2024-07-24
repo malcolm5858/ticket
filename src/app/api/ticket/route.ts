@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
 export async function PUT(req: NextRequest) {
   const body: Ticket = await req.json();
-  const ticket = prisma.ticket.update({
+  const ticket = await prisma.ticket.update({
     where: {
       id: body.id,
     },
